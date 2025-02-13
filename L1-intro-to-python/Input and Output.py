@@ -41,6 +41,39 @@ print(f'sum of {a} and {b} is {c}') # what does it print??
 # time to intorduce Input() function. probably thinking what is a function().
 # imagine there's a there's a Pizza making factory. There will be different stages/areas
 # e.g: Dough making, Tomatto catchup, Fruit and Vegitable, Oven and slishers.
-# at the end you see ediable pizza.
+# at the end you see ediable pizza. likewise... in programing a functions consists of 
+# multiple stages producing output as a result of an input.
 
+# mathamaticaly function takes one or more argument
+# f(5x) + f(6y) = z two function adding to Z.
+# 
+# back to imput() function.
+#  
+
+
+#a,b = input("Ram please enter two numbers to add") # it seems it doesn't have method()
+# menthod() as small action you can perform within a big function.
+# so we need to change our functino a bit.
+# going back to our example: "a = 9876" and "b = 937659".
+# a = input("Ram add your first number:")
+# b = input("Ram add your second number:")
+
+# print("Ram yoour first number is", a)
+# print("and your second number is:",b)
+# c = a+b
+# ok that worked. what's left now... to sum these two numbers.
+
+# print(f'Ram your two numbers {a} and {b} add up to {a+b} is that correct')
+# print(f'Ram your two numbers {a} and {b} add up to {c} is that correct')
+
+# ok then i came across converting into integer using int() fucntion.
+
+a = int(input("Ram add your first number:"))
+b = int(input("Ram add your second number:"))
+
+print("Ram yoour first number is", a)
+print("and your second number is:",b)
+c = int(a+b)
+
+print(f'Ram your two numbers {a} and {b} add up to {c} is that correct')
 
