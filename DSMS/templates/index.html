@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Security Management</title>
+</head>
+<body>
+    <h1>🔒 Data Security Management System</h1>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <p style="color: {{ 'green' if category == 'success' else 'red' }}">{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <h2>Store New Data</h2>
+    <form method="POST" action="{{ url_for('add_data') }}">
+        <input type="text" name="data" placeholder="Enter sensitive data" required>
+        <button type="submit">Store Securely</button>
+    </form>
+
+    <h2>Stored Records</h2>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Classification</th>
+            <th>Encrypted Data</th>
+            <th>Actions</th>
+        </tr>
+        {% for record in records %}
+        <tr>
+            <td>{{ record[0] }}</td>
+            <td>{{ record[1] }}</td>
+            <td>{{ record[2] }}</td>
+            <td>
+                <a href="{{ url_for('delete_record', id=record[0]) }}">❌ Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
